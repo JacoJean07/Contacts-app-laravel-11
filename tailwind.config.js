@@ -19,5 +19,19 @@ export default {
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [
+        forms,
+        typography,
+        require('daisyui'),
+
+    ],
+    daisyui: {
+        themes: [
+            "cupcake", // Tema base
+            "retro",
+            "cyberpunk",
+            "valentine",
+            "aqua"
+        ],
+    },
 };

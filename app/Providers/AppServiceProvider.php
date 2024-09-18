@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Session;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -19,6 +22,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+         // Aplicar el idioma desde la sesión
+        $locale = Session::get('locale', config('app.locale'));  // usa el valor de la sesión o el idioma predeterminado
+        App::setLocale($locale);
     }
 }
